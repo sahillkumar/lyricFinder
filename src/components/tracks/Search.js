@@ -13,7 +13,7 @@ const Search = () => {
 
     const handleSubmit = (event)=>{
         event.preventDefault()
-        axios.get(`http://api.musixmatch.com/ws/1.1/track.search?q_track=${tracktitle}&page_size=10&page=1&s_track_rating=desc&apikey=46a908cae9e6fe663a1fe8ef339f08f6`)
+        axios.get(`https://api.musixmatch.com/ws/1.1/track.search?q_track=${tracktitle}&page_size=10&page=1&s_track_rating=desc&apikey=46a908cae9e6fe663a1fe8ef339f08f6`)
         .then(res=>{
             dispatch({
                 type:'SEARCH_SONG',
