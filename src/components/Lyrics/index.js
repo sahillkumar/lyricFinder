@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useLocation, withRouter } from "react-router-dom";
 import { useLyricFinder } from "../../state/context";
 import { fetchLyrics, fetchTrack } from "../../apis";
@@ -21,29 +21,35 @@ const Lyrics = ({
 
   const { pathname } = useLocation();
 
-  const fetchCurrentTrack = async (trackId) => {
-    try {
-      const response = await fetchTrack(trackId);
-      dispatch({
-        type: ACTION_TYPES.fetchTrack,
-        payload: { [id]: response?.data?.message?.body?.track },
-      });
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
+  const fetchCurrentTrack = useCallback(
+    async (trackId) => {
+      try {
+        const response = await fetchTrack(trackId);
+        dispatch({
+          type: ACTION_TYPES.fetchTrack,
+          payload: { [id]: response?.data?.message?.body?.track },
+        });
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+    [id, dispatch]
+  );
 
-  const fetchLyricsCurrentSong = async (trackId) => {
-    try {
-      const response = await fetchLyrics(trackId);
-      dispatch({
-        type: ACTION_TYPES.fetchLyrics,
-        payload: { [id]: response?.data?.message?.body?.lyrics },
-      });
-    } catch (error) {
-      throw new Error(error);
-    }
-  };
+  const fetchLyricsCurrentSong = useCallback(
+    async (trackId) => {
+      try {
+        const response = await fetchLyrics(trackId);
+        dispatch({
+          type: ACTION_TYPES.fetchLyrics,
+          payload: { [id]: response?.data?.message?.body?.lyrics },
+        });
+      } catch (error) {
+        throw new Error(error);
+      }
+    },
+    [dispatch, id]
+  );
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -55,7 +61,7 @@ const Lyrics = ({
       fetchCurrentTrack(id);
       fetchLyricsCurrentSong(id);
     }
-  }, [id]);
+  }, [fetchCurrentTrack, fetchLyricsCurrentSong, id]);
 
   useEffect(() => {
     if (currentTrack?.[id] && currentLyrics?.[id]) {
