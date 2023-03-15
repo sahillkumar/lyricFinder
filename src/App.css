@@ -1,7 +1,7 @@
 body {
-  background: linear-gradient(to right, #2c3e50, #000000);
   padding: 0;
   margin: 0;
+  background-color: #191919;
 }
 
 html {

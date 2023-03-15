@@ -2,9 +2,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   color: #fff;
-  margin: 32px 0;
-  place-items: center;
+  margin: 40px auto;
   gap: 40px;
+  place-items: center;
+  width: 80%;
 }
 
 .trackCard {
@@ -21,7 +22,7 @@
   align-items: center;
   gap: 4px;
   margin: 8px 0;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: lighter;
 }
 
@@ -50,11 +51,11 @@
   height: 32px;
   width: 100%;
   cursor: pointer;
-  background-color: rgba(236, 255, 255, 0.5);
-  color: white;
   border: none;
+  color: white;
   letter-spacing: 1px;
   outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
 }
 
 .lyricsTrackName.skeleton {
