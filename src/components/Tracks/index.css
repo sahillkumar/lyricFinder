@@ -1,0 +1,65 @@
+.trackCardWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: #fff;
+  margin: 32px 0;
+  place-items: center;
+  gap: 40px;
+}
+
+.trackCard {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 16px 24px;
+  width: 440px;
+  height: 180px;
+  border-radius: 12px;
+}
+
+.trackArtist,
+.trackAlbum {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 8px 0;
+  font-size: 18px;
+  font-weight: lighter;
+}
+
+.trackName {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.lyricsButtonWrapper {
+  text-align: right;
+  margin-top: 32px;
+}
+
+.header {
+  color: #fff;
+  text-align: center;
+}
+
+.trackName.skeleton,
+.trackArtist.skeleton,
+.trackAlbum.skeleton {
+  width: 70%;
+}
+
+.lyricsButton {
+  height: 32px;
+  width: 100%;
+  cursor: pointer;
+  background-color: rgba(236, 255, 255, 0.5);
+  color: white;
+  border: none;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.lyricsTrackName.skeleton {
+  height: 30px;
+  margin: auto;
+  margin-bottom: 10px;
+  width: 70%;
+}

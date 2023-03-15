@@ -1,0 +1,42 @@
+.navbar {
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  z-index: 2;
+  font-size: 32px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  padding-left: 4%;
+  top: 0;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+.navbar.hide {
+  top: -72px;
+}
+
+.logoWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.logoName {
+  font-size: 18px;
+  font-weight: bolder;
+}
+
+.logo {
+  border: 2px solid white;
+  padding: 0 10px;
+  margin-right: 16px;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.logoTagline {
+  font-size: 12px;
+  font-weight: lighter;
+}

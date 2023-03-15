@@ -1,3 +1,34 @@
 body {
-  background:  linear-gradient(to right, #007991 , #78ffd6);
+  background: linear-gradient(to right, #2c3e50, #000000);
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  padding: 0;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.skeleton {
+  animation: loading 1s linear infinite alternate;
+  color: transparent;
+}
+
+@keyframes loading {
+  0% {
+    background-color: white;
+    opacity: 0.2;
+  }
+
+  100% {
+    background-color: white;
+    opacity: 0.3;
+  }
 }

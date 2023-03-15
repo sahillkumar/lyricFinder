@@ -1,23 +1,23 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import './App.css';
-import Navbar from './components/layouts/Navbar';
-import Index from './components/layouts/Index'
-import { ContextProvider } from './context';
-import Lyrics from './components/tracks/Lyrics';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import "./app.css";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import Lyrics from "./components/Lyrics";
+import { LyricFinderContextProvider } from "./state/context";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <ContextProvider>
+    <LyricFinderContextProvider>
       <BrowserRouter>
-        <Navbar/>
-        <div className="container">
+        <Navbar />
         <Switch>
-          <Route exact path="/" component={Index}/>
-          <Route exact path="/track/lyrics/:id" component={Lyrics}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/track/lyrics/:id" component={Lyrics} />
         </Switch>
-        </div>
+        <Footer />
       </BrowserRouter>
-    </ContextProvider>
+    </LyricFinderContextProvider>
   );
 }
 

@@ -1,0 +1,63 @@
+.lyricsContainer {
+  margin-top: 120px;
+  margin-bottom: 50px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 80vh;
+}
+
+.lyricsWrapper {
+  color: #fff;
+  width: 50%;
+  margin: auto;
+  padding: 40px;
+  border-radius: 20px;
+  border: 1px solid #fff;
+}
+
+.lyrics {
+  font-size: 18px;
+  line-height: 2;
+  margin-top: 40px;
+  white-space: pre-line;
+  text-align: center;
+  font-weight: lighter;
+}
+
+.lyricsArtist {
+  font-style: italic;
+}
+
+.lyricsTrackName {
+  font-size: 2.5rem;
+}
+
+.lyricsInfo {
+  text-align: center;
+}
+
+.copyRight {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 32px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.copyRightLogoWrapper {
+  height: 24px;
+}
+
+.lyricsArtist.skeleton {
+  height: 30px;
+  width: 40%;
+  margin: auto;
+}
+
+.lyricsLine.skeleton {
+  height: 30px;
+  margin: 8px 0;
+}
