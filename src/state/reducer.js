@@ -2,6 +2,12 @@ import { ACTION_TYPES } from "../constants";
 
 export const reducer = (state, action) => {
   switch (action.type) {
+    case ACTION_TYPES.searchSongStatus:
+      return {
+        ...state,
+        searchStatus: action?.payload,
+        heading: "Search Results",
+      };
     case ACTION_TYPES.searchSong:
       return {
         ...state,

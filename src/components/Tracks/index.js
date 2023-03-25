@@ -13,14 +13,19 @@ const getSkeleton = () => {
 };
 
 const Tracks = () => {
-  const { trackList, heading } = useLyricFinder();
+  const { trackList, heading, searchStatus } = useLyricFinder();
 
   return (
     <div>
       <div>
         <div className="header">{heading}</div>
         <div className="trackCardWrapper">
-          {trackList?.length ? (
+          {trackList?.length === 0 && searchStatus !== undefined ? (
+            <div className="empty">
+              Sorry, we coudn't get any results for your search. <br />
+              Try searching for different song.
+            </div>
+          ) : trackList?.length ? (
             <>
               {trackList.map((track) => (
                 <Track key={track.track.track_id} track={track} />

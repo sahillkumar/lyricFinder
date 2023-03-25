@@ -9,6 +9,10 @@ const Search = () => {
   const getSearchResults = async (value) => {
     try {
       const response = await fetchSearchResults(value);
+      dispatch({
+        type: "SEARCH_STATUS",
+        payload: response?.status ?? 500,
+      });
       const trackList = response?.data?.message?.body?.track_list ?? [];
       dispatch({
         type: "SEARCH_SONG",
@@ -32,6 +36,10 @@ const Search = () => {
   };
 
   const handleChange = async ({ target: { value } }) => {
+    dispatch({
+      type: "SEARCH_STATUS",
+      payload: undefined,
+    });
     if (!value || !value?.length) {
       getTopTen();
     } else {

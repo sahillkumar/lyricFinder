@@ -14,6 +14,7 @@ export const ACTION_TYPES = {
   searchSong: "SEARCH_SONG",
   fetchTrack: "FETCH_TRACK",
   fetchLyrics: "FETCH_LYRICS",
+  searchSongStatus: "SEARCH_STATUS",
 };
 
 export const UP = "up";
