@@ -3,6 +3,7 @@ import {
   API_KEY,
   FETCH_LYRICS_URL,
   FETCH_TRACK_URL,
+  HEROKU_PROXY_URL,
   SEARCH_URL,
   TOP_TEN_SONGS_URL,
 } from "../constants";
@@ -10,7 +11,7 @@ import {
 export const fetchTopTenTracks = () => {
   const URL = TOP_TEN_SONGS_URL.replace("$API_KEY", API_KEY);
   return axios
-    .get(URL)
+    .get(`${HEROKU_PROXY_URL}${URL}`)
     .then((response) => response)
     .catch((err) => err);
 };
@@ -18,7 +19,7 @@ export const fetchTopTenTracks = () => {
 export const fetchSearchResults = (query) => {
   const URL = SEARCH_URL.replace("$QUERY", query).replace("$API_KEY", API_KEY);
   return axios
-    .get(URL)
+    .get(`${HEROKU_PROXY_URL}${URL}`)
     .then((response) => response)
     .catch((err) => err);
 };
@@ -29,7 +30,7 @@ export const fetchLyrics = (trackId) => {
     API_KEY
   );
   return axios
-    .get(URL)
+    .get(`${HEROKU_PROXY_URL}${URL}`)
     .then((response) => response)
     .catch((err) => err);
 };
@@ -40,7 +41,7 @@ export const fetchTrack = (trackId) => {
     API_KEY
   );
   return axios
-    .get(URL)
+    .get(`${HEROKU_PROXY_URL}${URL}`)
     .then((response) => response)
     .catch((err) => err);
 };

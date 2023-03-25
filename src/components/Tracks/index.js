@@ -18,7 +18,7 @@ const Tracks = () => {
   return (
     <div>
       <div>
-        <h1 className="header">{heading}</h1>
+        <div className="header">{heading}</div>
         <div className="trackCardWrapper">
           {trackList?.length ? (
             <>

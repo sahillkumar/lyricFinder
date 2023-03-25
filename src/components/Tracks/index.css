@@ -12,7 +12,7 @@
   border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 16px 24px;
   width: 440px;
-  height: 180px;
+  height: 175px;
   border-radius: 12px;
 }
 
@@ -27,7 +27,7 @@
 }
 
 .trackName {
-  font-size: 2rem;
+  font-size: 25px;
   font-weight: bold;
 }
 
@@ -39,6 +39,7 @@
 .header {
   color: #fff;
   text-align: center;
+  font-size: 2.5rem;
 }
 
 .trackName.skeleton,
