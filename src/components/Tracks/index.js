@@ -3,6 +3,7 @@ import { useLyricFinder } from "../../state/context";
 import Track from "./Track";
 import TrackSkeleton from "./TrackSkeleton";
 import "./index.css";
+import NotFound from "../NotFound";
 
 const getSkeleton = () => {
   let ar = [];
@@ -19,22 +20,19 @@ const Tracks = () => {
     <div>
       <div>
         <div className="header">{heading}</div>
-        <div className="trackCardWrapper">
-          {trackList?.length === 0 && searchStatus !== undefined ? (
-            <div className="empty">
-              Sorry, we coudn't get any results for your search. <br />
-              Try searching for different song.
-            </div>
-          ) : trackList?.length ? (
-            <>
-              {trackList.map((track) => (
-                <Track key={track.track.track_id} track={track} />
-              ))}
-            </>
-          ) : (
+        {trackList?.length === 0 && searchStatus !== undefined ? (
+          <NotFound />
+        ) : trackList?.length ? (
+          <div className="trackCardWrapper">
+            {trackList.map((track) => (
+              <Track key={track.track.track_id} track={track} />
+            ))}
+          </div>
+        ) : (
+          <div className="trackCardWrapper">
             <>{getSkeleton()}</>
-          )}
-        </div>
+          </div>
+        )}
       </div>
     </div>
   );

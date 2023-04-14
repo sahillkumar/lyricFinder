@@ -3,9 +3,9 @@
   grid-template-columns: 1fr 1fr;
   color: #fff;
   margin: 40px auto;
-  gap: 40px;
+  row-gap: 40px;
   place-items: center;
-  width: 80%;
+  width: 75%;
 }
 
 .trackCard {
@@ -64,19 +64,4 @@
   margin: auto;
   margin-bottom: 10px;
   width: 70%;
-}
-
-.empty {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  line-height: 2;
-  width: 200%;
-  font-weight: lighter;
-  height: 50vh;
-  margin: auto;
-  border-radius: 12px;
-  font-size: 16px;
-  border: 2px solid rgba(255, 255, 255, 0.5);
 }
