@@ -1,6 +1,6 @@
 import axios from "axios";
 import {
-  API_KEY,
+  BASE_URL,
   FETCH_LYRICS_URL,
   FETCH_TRACK_URL,
   SEARCH_URL,
@@ -8,39 +8,33 @@ import {
 } from "../constants";
 
 export const fetchTopTenTracks = () => {
-  const URL = TOP_TEN_SONGS_URL.replace("$API_KEY", API_KEY);
   return axios
-    .get(`${URL}`)
+  .get(`${BASE_URL}${TOP_TEN_SONGS_URL}`)
     .then((response) => response)
     .catch((err) => err);
 };
 
 export const fetchSearchResults = (query) => {
-  const URL = SEARCH_URL.replace("$QUERY", query).replace("$API_KEY", API_KEY);
   return axios
-    .get(`${URL}`)
+    .get(`${BASE_URL}${SEARCH_URL}`,{
+      params: {
+        query
+      }
+    })
     .then((response) => response)
     .catch((err) => err);
 };
 
 export const fetchLyrics = (trackId) => {
-  const URL = FETCH_LYRICS_URL.replace("$TRACK_ID", trackId).replace(
-    "$API_KEY",
-    API_KEY
-  );
   return axios
-    .get(`${URL}`)
+  .get(`${BASE_URL}${FETCH_LYRICS_URL}`, { params:{ trackId}})
     .then((response) => response)
     .catch((err) => err);
 };
 
 export const fetchTrack = (trackId) => {
-  const URL = FETCH_TRACK_URL.replace("$TRACK_ID", trackId).replace(
-    "$API_KEY",
-    API_KEY
-  );
   return axios
-    .get(`${URL}`)
+    .get(`${BASE_URL}${FETCH_TRACK_URL}`,{ params:{ trackId}})
     .then((response) => response)
     .catch((err) => err);
 };

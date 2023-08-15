@@ -30,13 +30,43 @@
 
 .logo {
   border: 2px solid #1cb4a0;
-  padding: 0 10px;
   margin-right: 16px;
   font-weight: 500;
   letter-spacing: 2px;
 }
 
+.logo a {
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  padding: 0 10px;
+}
+
 .logoTagline {
   font-size: 12px;
   font-weight: lighter;
+}
+
+@media (max-width: 576px) {
+  .logoTagline {
+    font-size: 10px;
+    font-weight: lighter;
+  }
+
+  .logoName {
+    font-size: 16px;
+    font-weight: bolder;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .logoTagline {
+    font-size: 12px;
+    font-weight: lighter;
+  }
+
+  .logoName {
+    font-size: 18px;
+    font-weight: bolder;
+  }
 }

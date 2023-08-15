@@ -26,3 +26,45 @@
   width: 32px;
   height: 32px;
 }
+
+.icon svg {
+  fill: #fff;
+  transition-duration: 500ms;
+}
+
+.icon svg:hover {
+  fill: #1cb4a0;
+  transition-duration: 500ms;
+}
+
+@media (max-width: 576px) {
+  .footer {
+    height: 100px;
+  }
+
+  .socialWrapper {
+    width: 60%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .footer {
+    height: 150px;
+  }
+
+  .socialWrapper {
+    width: 40%;
+  }
+}
+
+@media (min-width: 769px) {
+  .socialWrapper {
+    width: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .socialWrapper {
+    width: 20%;
+  }
+}

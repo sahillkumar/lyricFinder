@@ -17,3 +17,19 @@
 .emptyWrapper span {
   font-size: 18px;
 }
+
+@media (max-width: 576px) {
+  .emptyWrapper {
+    height: 25vh;
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .emptyWrapper {
+    height: 40vh;
+    width: 90%;
+    margin: 20px auto;
+  }
+}

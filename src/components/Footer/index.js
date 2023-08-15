@@ -1,8 +1,23 @@
-import instagram from "../../assets/images/instagram.svg";
-import linkedIn from "../../assets/images/linkedIn.svg";
-import github from "../../assets/images/github.svg";
-import gmail from "../../assets/images/gmail.svg";
 import "./index.css";
+import Linkedin from "./LinkedIn";
+import Github from "./Github";
+import Instagram from "./Instagram";
+import Gmail from "./Gmail";
+
+const LINKEDIN = "https://www.linkedin.com/in/sahil-kumar-a055b9181/";
+const INSTAGRAM = "https://instagram.com/sahillkumar_/ ";
+const GITHUB = "https://github.com/sahillkumar";
+const GMAIL = "mailto:sahil511kumar@gmail.com";
+
+const Icon = ({ children, link }) => {
+  return (
+    <div className="icon">
+      <a href={link} target="_blank" rel="noreferrer">
+        {children}
+      </a>
+    </div>
+  );
+};
 
 const Footer = () => {
   return (
@@ -10,42 +25,18 @@ const Footer = () => {
       <div className="socialWrapper">
         <div className="follow">Follow us</div>
         <div className="socialIcons">
-          <div className="icon">
-            <a
-              href="https://www.linkedin.com/in/sahil-kumar-a055b9181/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={linkedIn} alt="linkedin" />
-            </a>
-          </div>
-          <div className="icon">
-            <a
-              href="https://github.com/sahillkumar"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={github} alt="github" />
-            </a>
-          </div>
-          <div className="icon">
-            <a
-              href="https://instagram.com/sahillkumar_/ "
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={instagram} alt="instagram" />
-            </a>
-          </div>
-          <div className="icon">
-            <a
-              href="mailto:sahil511kumar@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src={gmail} alt="gmail" />
-            </a>
-          </div>
+          <Icon link={LINKEDIN}>
+            <Linkedin />
+          </Icon>
+          <Icon link={GITHUB}>
+            <Github />
+          </Icon>
+          <Icon link={INSTAGRAM}>
+            <Instagram />
+          </Icon>
+          <Icon link={GMAIL}>
+            <Gmail />
+          </Icon>
         </div>
       </div>
     </div>

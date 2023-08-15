@@ -2,3 +2,15 @@
   margin-top: 120px;
   min-height: 100vh;
 }
+
+@media (max-width: 576px) {
+  .home {
+    margin-top: 100px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .home {
+    margin-top: 100px;
+  }
+}
