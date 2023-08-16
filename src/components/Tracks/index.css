@@ -10,10 +10,9 @@
 .trackCard {
   border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 16px 24px;
-  width: 70%;
-  height: 175px;
   border-radius: 12px;
   transition-duration: 1s;
+  box-sizing: border-box;
 }
 
 .trackCard:hover {
@@ -81,15 +80,29 @@
 @media (max-width: 576px) {
   .trackCardWrapper {
     grid-template-columns: 1fr;
+    place-content: center;
     margin: 20px auto;
     row-gap: 20px;
     width: 100%;
   }
   .trackCard {
-    width: 70%;
+    width: 300px;
   }
   .header {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+  }
+
+  .trackName {
+    font-size: 18px;
+  }
+
+  .trackArtist,
+  .trackAlbum {
+    font-size: 14px;
+  }
+
+  .lyricsButtonWrapper {
+    margin-top: 16px;
   }
 }
 
@@ -101,16 +114,28 @@
     width: 100%;
   }
   .trackCard {
-    width: 50%;
+    width: 440px;
   }
   .header {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+  .trackName {
+    font-size: 20px;
+  }
+
+  .trackArtist,
+  .trackAlbum {
+    font-size: 16px;
+  }
+
+  .lyricsButtonWrapper {
+    margin-top: 24px;
   }
 }
 
 @media (min-width: 769px) {
   .trackCard {
-    width: 70%;
+    width: 350px;
   }
 }
 

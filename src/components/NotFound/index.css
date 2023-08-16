@@ -20,16 +20,18 @@
 
 @media (max-width: 576px) {
   .emptyWrapper {
-    height: 25vh;
-    width: 90%;
+    height: 40vh;
+    width: 80%;
     margin: 20px auto;
+    font-size: 12px;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
   .emptyWrapper {
-    height: 40vh;
-    width: 90%;
+    height: 60vh;
+    width: 80%;
     margin: 20px auto;
+    font-size: 14px;
   }
 }
