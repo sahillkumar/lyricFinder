@@ -17,13 +17,29 @@
 
 .trackCard:hover {
   border: 2px solid #1cb4a0;
-  color: #1cb4a0;
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
+}
 
-  .lyricsButton {
-    background-color: #1cb4a0;
-    transition-duration: 1500ms;
-  }
+.trackCard .lyricsButton {
+  height: 32px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  color: white;
+  letter-spacing: 1px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition-duration: 1000ms;
+}
+
+.trackCard:hover .lyricsButton {
+  background-color: #1cb4a0;
+  transition-duration: 1000ms;
+}
+
+.trackCard:hover .trackName {
+  color: #1cb4a0;
+  transition-duration: 1000ms;
 }
 
 .trackArtist,
@@ -39,6 +55,7 @@
 .trackName {
   font-size: 25px;
   font-weight: bold;
+  transition-duration: 1000ms;
 }
 
 .lyricsButtonWrapper {
@@ -56,18 +73,6 @@
 .trackArtist.skeleton,
 .trackAlbum.skeleton {
   width: 70%;
-}
-
-.lyricsButton {
-  height: 32px;
-  width: 100%;
-  cursor: pointer;
-  border: none;
-  color: white;
-  letter-spacing: 1px;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition-duration: 1500ms;
 }
 
 .lyricsTrackName.skeleton {
