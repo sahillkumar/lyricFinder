@@ -20,11 +20,11 @@
 .lyricsWrapper:hover {
   border: 2px solid #1cb4a0;
   transition-duration: 1s;
+}
 
-  .lyricsArtist {
-    transition-duration: 1s;
-    color: #1cb4a0;
-  }
+.lyricsWrapper:hover .lyricsArtist {
+  transition-duration: 1s;
+  color: #1cb4a0;
 }
 
 .lyrics {
