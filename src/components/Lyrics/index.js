@@ -68,6 +68,8 @@ const Lyrics = ({
       setTrack(currentTrack?.[id]);
       setLyrics(currentLyrics?.[id]);
       setLoading(false);
+    } else if (currentTrack?.[id] && !currentLyrics?.[id]) {
+      setLoading(false);
     }
   }, [currentTrack, currentLyrics, id]);
 
@@ -78,31 +80,48 @@ const Lyrics = ({
           <LyricSkeleton />
         ) : (
           <>
-            <div className="lyricsInfo">
+            {lyrics?.lyrics_body ? (
+              <>
+                <div className="lyricsInfo">
+                  <div
+                    className="lyricsTrackName ellipsis"
+                    title={track?.track_name}
+                  >
+                    {track?.track_name}
+                  </div>
+                  <div className="lyricsArtist ellipsis">
+                    {track?.artist_name && `- ${track?.artist_name}`}
+                  </div>
+                </div>
+                <div className="lyrics">
+                  {removeCopyRightText(lyrics?.lyrics_body)}
+                </div>
+                <div className="copyRight">
+                  Lyrics Powered By
+                  <div className="copyRightLogoWrapper">
+                    <img
+                      src={MusixMatchImg}
+                      alt="musixmatch"
+                      width="100%"
+                      height="100%"
+                    />
+                  </div>
+                </div>
+              </>
+            ) : (
               <div
-                className="lyricsTrackName ellipsis"
-                title={track?.track_name}
+                className="emptyWrapper"
+                style={{
+                  border: "none",
+                }}
               >
-                {track?.track_name}
+                No Lyrics Found &#128546;
+                <br />
+                Sorry, we coudn't get the lyrics of the song you were looking
+                for. <br />
+                Try searching for different song.
               </div>
-              <div className="lyricsArtist ellipsis">
-                - {track?.artist_name}
-              </div>
-            </div>
-            <div className="lyrics">
-              {removeCopyRightText(lyrics?.lyrics_body)}
-            </div>
-            <div className="copyRight">
-              Lyrics Powered By
-              <div className="copyRightLogoWrapper">
-                <img
-                  src={MusixMatchImg}
-                  alt="musixmatch"
-                  width="100%"
-                  height="100%"
-                />
-              </div>
-            </div>
+            )}
           </>
         )}
       </div>

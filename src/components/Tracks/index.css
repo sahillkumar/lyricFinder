@@ -42,6 +42,10 @@
   transition-duration: 1000ms;
 }
 
+.trackCard:hover .trackName.skeleton {
+  color: transparent;
+}
+
 .trackArtist,
 .trackAlbum {
   display: flex;
