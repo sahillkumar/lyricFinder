@@ -21,9 +21,8 @@ const Icon = ({ children, link }) => {
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <div className="socialWrapper">
-        <div className="follow">Follow us</div>
         <div className="socialIcons">
           <Icon link={LINKEDIN}>
             <Linkedin />
@@ -39,7 +38,7 @@ const Footer = () => {
           </Icon>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 export default Footer;

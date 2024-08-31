@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import { useLocation, withRouter } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { useLyricFinder } from "../../state/context";
 import { fetchLyrics, fetchTrack } from "../../apis";
 import { ACTION_TYPES } from "../../constants";
@@ -7,6 +7,7 @@ import MusixMatchImg from "../../assets/images/musixmatch.svg";
 import { removeCopyRightText } from "../../utils";
 import LyricSkeleton from "./LyricSkeleton";
 import "./index.css";
+import NotFound from "../NotFound";
 
 const Lyrics = ({
   match: {
@@ -18,8 +19,6 @@ const Lyrics = ({
   const [lyrics, setLyrics] = useState();
   const [track, setTrack] = useState();
   const [loading, setLoading] = useState(true);
-
-  const { pathname } = useLocation();
 
   const fetchCurrentTrack = useCallback(
     async (trackId) => {
@@ -52,10 +51,6 @@ const Lyrics = ({
   );
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
-
-  useEffect(() => {
     if (id) {
       setLoading(true);
       fetchCurrentTrack(id);
@@ -74,7 +69,7 @@ const Lyrics = ({
   }, [currentTrack, currentLyrics, id]);
 
   return (
-    <div className="lyricsContainer">
+    <main className="lyricsContainer">
       <div className="lyricsWrapper">
         {loading ? (
           <LyricSkeleton />
@@ -109,23 +104,16 @@ const Lyrics = ({
                 </div>
               </>
             ) : (
-              <div
-                className="emptyWrapper"
-                style={{
-                  border: "none",
-                }}
-              >
-                No Lyrics Found &#128546;
-                <br />
-                Sorry, we coudn't get the lyrics of the song you were looking
-                for. <br />
-                Try searching for different song.
-              </div>
+              <NotFound
+                header="Lyrics"
+                description=" Sorry, we coudn't get the lyrics of the song you were looking
+                for."
+              />
             )}
           </>
         )}
       </div>
-    </div>
+    </main>
   );
 };
 

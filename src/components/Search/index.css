@@ -1,49 +1,28 @@
+.searchWrapper {
+  text-align: center;
+}
+
 .inputSearch {
-  height: 50px;
-  width: 700px;
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 30px;
-  padding: 20px;
-  font-size: 16px;
+  border-radius: 8px;
   outline: none;
   color: #fff;
   background-color: transparent;
   font-family: "Poppins";
-  transition-duration: 1s;
+
+  height: 32px;
+  width: min(80%, 700px);
+  padding: 20px;
+  font-size: 14px;
 }
 
 .inputSearch:hover {
-  border: 1px solid #1cb4a0;
-  transition-duration: 1s;
+  border: 1px solid var(--secondary-color);
 }
 
-.searchWrapper {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-@media (max-width: 576px) {
+@media screen and (min-width: 768px) {
   .inputSearch {
-    height: 36px;
-    width: 75%;
-    padding: 12px;
-    font-size: 12px;
-  }
-
-  .searchWrapper {
-    margin-bottom: 20px;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-  .inputSearch {
-    height: 36px;
-    width: 75%;
-    padding: 16px;
-    font-size: 14px;
-  }
-
-  .searchWrapper {
-    margin-bottom: 20px;
+    padding: 24px;
+    font-size: 18px;
   }
 }

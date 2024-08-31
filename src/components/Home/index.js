@@ -4,10 +4,10 @@ import "./index.css";
 
 function Home() {
   return (
-    <div className="home">
+    <main className="home">
       <Search />
       <Tracks />
-    </div>
+    </main>
   );
 }
 

@@ -17,24 +17,30 @@ const Tracks = () => {
   const { trackList, heading, searchStatus } = useLyricFinder();
 
   return (
-    <div>
-      <div>
-        <div className="header">{heading}</div>
-        {trackList?.length === 0 && searchStatus !== undefined ? (
-          <NotFound />
-        ) : trackList?.length ? (
+    <>
+      {trackList?.length === 0 && searchStatus !== undefined ? (
+        <NotFound
+          header="Results"
+          description="Sorry, we coudn't get any results for your search."
+        />
+      ) : trackList?.length ? (
+        <>
+          <div className="header">{heading}</div>
           <div className="trackCardWrapper">
             {trackList.map((track) => (
               <Track key={track.track.track_id} track={track} />
             ))}
           </div>
-        ) : (
+        </>
+      ) : (
+        <>
+          <div className="header">{heading}</div>
           <div className="trackCardWrapper">
             <>{getSkeleton()}</>
           </div>
-        )}
-      </div>
-    </div>
+        </>
+      )}
+    </>
   );
 };
 

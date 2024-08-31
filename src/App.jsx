@@ -10,12 +10,14 @@ function App() {
   return (
     <LyricFinderContextProvider>
       <BrowserRouter>
-        <Navbar />
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/track/lyrics/:id" component={Lyrics} />
-        </Switch>
-        <Footer />
+        <div className="main">
+          <Navbar />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/track/lyrics/:id" component={Lyrics} />
+          </Switch>
+          <Footer />
+        </div>
       </BrowserRouter>
     </LyricFinderContextProvider>
   );

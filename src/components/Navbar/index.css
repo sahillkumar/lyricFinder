@@ -1,21 +1,13 @@
 .navbar {
-  color: #fff;
-  position: fixed;
+  /* position: absolute; */
   width: 100%;
-  height: 50px;
-  z-index: 2;
-  font-size: 32px;
-  background: rgba(0, 0, 0, 0.3);
+  background: #111;
   padding: 12px;
   padding-left: 4%;
   top: 0;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 500ms;
-}
-
-.navbar.hide {
-  top: -72px;
+  font-size: 24px;
 }
 
 .logoWrapper {
@@ -29,17 +21,17 @@
 }
 
 .logo {
-  border: 2px solid #1cb4a0;
+  border: 2px solid var(--secondary-color);
   margin-right: 16px;
   font-weight: 500;
   letter-spacing: 2px;
+  padding: 0 8px;
 }
 
 .logo a {
   color: #fff;
   text-decoration: none;
   width: 100%;
-  padding: 0 10px;
 }
 
 .logoTagline {
@@ -47,26 +39,17 @@
   font-weight: lighter;
 }
 
-@media (max-width: 576px) {
-  .logoTagline {
-    font-size: 10px;
-    font-weight: lighter;
+@media screen and (min-width: 768px) {
+  .navbar {
+    padding: 16px;
+    font-size: 32px;
+  }
+
+  .logo {
+    padding: 0 10px;
   }
 
   .logoName {
-    font-size: 16px;
-    font-weight: bolder;
-  }
-}
-
-@media (min-width: 576px) and (max-width: 768px) {
-  .logoTagline {
-    font-size: 12px;
-    font-weight: lighter;
-  }
-
-  .logoName {
-    font-size: 18px;
-    font-weight: bolder;
+    font-size: 24px;
   }
 }

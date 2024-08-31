@@ -1,49 +1,29 @@
+.header {
+  text-align: center;
+  font-size: 1.35rem;
+  color: var(--secondary-color);
+}
+
 .trackCardWrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  color: #fff;
-  margin: 40px auto;
-  row-gap: 40px;
-  place-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
+  gap: 20px;
+  width: 80%;
+  margin: auto;
 }
 
 .trackCard {
   border: 2px solid rgba(255, 255, 255, 0.5);
   padding: 16px 24px;
   border-radius: 12px;
-  transition-duration: 1s;
   box-sizing: border-box;
+  transition-duration: 300ms;
 }
 
-.trackCard:hover {
-  border: 2px solid #1cb4a0;
-  transition-duration: 1000ms;
-}
-
-.trackCard .lyricsButton {
-  height: 32px;
-  width: 100%;
-  cursor: pointer;
-  border: none;
-  color: white;
-  letter-spacing: 1px;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  transition-duration: 1000ms;
-}
-
-.trackCard:hover .lyricsButton {
-  background-color: #1cb4a0;
-  transition-duration: 1000ms;
-}
-
-.trackCard:hover .trackName {
-  color: #1cb4a0;
-  transition-duration: 1000ms;
-}
-
-.trackCard:hover .trackName.skeleton {
-  color: transparent;
+.trackName {
+  font-size: 1rem;
+  font-weight: bold;
+  transition-duration: 300ms;
 }
 
 .trackArtist,
@@ -52,25 +32,42 @@
   align-items: center;
   gap: 4px;
   margin: 8px 0;
-  font-size: 16px;
+  font-size: 0.8rem;
   font-weight: 500;
 }
 
-.trackName {
-  font-size: 25px;
-  font-weight: bold;
-  transition-duration: 1000ms;
+.trackCard:hover {
+  border-color: var(--secondary-color);
+}
+
+.trackCard .lyricsButton {
+  transition-duration: 300ms;
+  height: 24px;
+  font-size: 12px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  color: var(--primary-color);
+  letter-spacing: 1px;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.trackCard:hover .lyricsButton {
+  background-color: var(--secondary-color);
+}
+
+.trackCard:hover .trackName {
+  color: var(--secondary-color);
+}
+
+.trackCard:hover .trackName.skeleton {
+  color: transparent;
 }
 
 .lyricsButtonWrapper {
   text-align: right;
-  margin-top: 32px;
-}
-
-.header {
-  color: #fff;
-  text-align: center;
-  font-size: 2.5rem;
+  margin-top: 16px;
 }
 
 .trackName.skeleton,
@@ -86,73 +83,38 @@
   width: 70%;
 }
 
-@media (max-width: 576px) {
-  .trackCardWrapper {
-    grid-template-columns: 1fr;
-    place-content: center;
-    margin: 20px auto;
-    row-gap: 20px;
-    width: 100%;
-  }
-  .trackCard {
-    width: 300px;
-  }
+@media screen and (min-width: 768px) {
   .header {
-    font-size: 1.2rem;
+    font-size: 2rem;
+  }
+
+  .trackCardWrapper {
+    width: 90%;
+    gap: 32px;
   }
 
   .trackName {
-    font-size: 18px;
+    font-size: 1.25rem;
   }
 
   .trackArtist,
   .trackAlbum {
+    font-size: 1rem;
+  }
+
+  .trackCard .lyricsButton {
+    height: 32px;
     font-size: 14px;
   }
-
-  .lyricsButtonWrapper {
-    margin-top: 16px;
-  }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
-  .trackCardWrapper {
-    grid-template-columns: 1fr;
-    margin: 20px auto;
-    row-gap: 20px;
-    width: 100%;
-  }
-  .trackCard {
-    width: 440px;
-  }
+@media screen and (min-width: 1024px) {
   .header {
-    font-size: 1.6rem;
-  }
-  .trackName {
-    font-size: 20px;
+    font-size: 2.5rem;
   }
 
-  .trackArtist,
-  .trackAlbum {
-    font-size: 16px;
-  }
-
-  .lyricsButtonWrapper {
-    margin-top: 24px;
-  }
-}
-
-@media (min-width: 769px) {
-  .trackCard {
-    width: 350px;
-  }
-}
-
-@media (min-width: 1200px) {
   .trackCardWrapper {
-    width: 80%;
-  }
-  .trackCard {
-    width: 440px;
+    width: 75%;
+    gap: 40px;
   }
 }

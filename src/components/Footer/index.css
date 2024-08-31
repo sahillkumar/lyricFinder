@@ -1,70 +1,50 @@
 .footer {
-  height: 200px;
   position: relative;
+  width: 100%;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.3);
-  color: #fff;
-  padding: 40px;
+  background: #111;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 12px;
 }
 
 .socialWrapper {
-  width: 20%;
+  width: 100%;
   text-align: center;
 }
 
 .socialIcons {
   margin: 16px 0;
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  gap: 24px;
+  justify-content: center;
 }
 
 .icon {
-  width: 32px;
-  height: 32px;
+  width: 24px;
+  height: 24px;
 }
 
 .icon svg {
   fill: #fff;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
 }
 
 .icon svg:hover {
   fill: #1cb4a0;
-  transition-duration: 500ms;
+  transition-duration: 300ms;
 }
 
-@media (max-width: 576px) {
-  .footer {
-    height: 100px;
-  }
-
-  .socialWrapper {
-    width: 60%;
+@media screen and (min-width: 768px) {
+  .socialIcons {
+    gap: 36px;
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
-  .footer {
-    height: 150px;
-  }
-
-  .socialWrapper {
-    width: 40%;
-  }
-}
-
-@media (min-width: 769px) {
-  .socialWrapper {
-    width: 30%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .socialWrapper {
-    width: 20%;
+@media screen and (min-width: 1024px) {
+  .socialIcons {
+    gap: 54px;
   }
 }
