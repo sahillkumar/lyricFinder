@@ -6,10 +6,9 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="logoWrapper">
-        <div className="logo">
-          <Link to="/">LF</Link>
-        </div>
-
+        <Link to="/">
+          <div className="logo"> LF</div>
+        </Link>
         <div className="logoNameWrapper">
           <div className="logoName">Lyrics Finder </div>
           <div className="logoTagline">find the story behind every song</div>

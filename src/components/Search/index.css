@@ -9,15 +9,15 @@
   color: #fff;
   background-color: transparent;
   font-family: "Poppins";
-
   height: 32px;
   width: min(80%, 700px);
   padding: 20px;
   font-size: 14px;
 }
 
-.inputSearch:hover {
-  border: 1px solid var(--secondary-color);
+.inputSearch:hover,
+.inputSearch:focus {
+  border-color: var(--secondary-color);
 }
 
 @media screen and (min-width: 768px) {

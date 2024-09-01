@@ -22,16 +22,15 @@
 
 .logo {
   border: 2px solid var(--secondary-color);
-  margin-right: 16px;
   font-weight: 500;
   letter-spacing: 2px;
   padding: 0 8px;
 }
 
-.logo a {
+a {
   color: #fff;
   text-decoration: none;
-  width: 100%;
+  margin-right: 16px;
 }
 
 .logoTagline {
